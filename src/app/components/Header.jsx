@@ -11,7 +11,7 @@ export default function Header() {
 
   return (
     <div className="header">
-      <h1>devfinder</h1>
+      <h2>devfinder</h2>
       <div className="toggle-container">
       <span>dark</span>
         <button onClick={toggleTheme} className="theme-toggle">
