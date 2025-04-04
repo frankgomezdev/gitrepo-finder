@@ -1,19 +1,34 @@
 import { useState } from "react";
 import { getUser } from "../api/github";
 import { useGitHub } from "../context/GitHubContext";
+import { toast } from "react-toastify";
 
 export default function SearchBar() {
   const [username, setUserName] = useState("");
   const { setUserData, setError, setLoading } = useGitHub();
 
   const getDevInfo = async () => {
-    if (!username) return;
+    if (!username) {
+      toast.error("Please enter a GitHub username");
+      return;
+    }
+    setLoading(true);
+
     try {
       const user = await getUser(username);
       setUserData(user);
-      console.log(userData);
+      setError(null);
     } catch (err) {
       setError(err.message);
+      toast.error("User not found", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
     } finally {
       setLoading(false);
     }

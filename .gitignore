@@ -14,7 +14,10 @@
 userData.json
 
 # testing
-/coverage
+/src/app/test
+
+# notes
+Notes.md
 
 # next.js
 /.next/
