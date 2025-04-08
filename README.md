@@ -30,7 +30,6 @@ A modern web application that allows users to search and view GitHub user profil
 1. **API Integration**
 
    - Implementing GitHub API authentication
-   - Handling API rate limits
    - Error handling for non-existent users
 
 2. **State Management**
@@ -89,7 +88,6 @@ yarn dev
    - Bio
    - Repository statistics
    - Social links and location
-
 
 ## Contributing
 

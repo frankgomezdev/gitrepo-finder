@@ -1,5 +1,3 @@
-'use client';
-
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import DevInfo from "./components/DevInfo";

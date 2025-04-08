@@ -1,6 +1,9 @@
-import Image from "next/image";
+'use client'
+
 import { useGitHub } from "../context/GitHubContext";
 import formatJoinDate from "../utils/formatDate";
+import { formatUrl } from "../utils/formatUrl";
+
 
 export default function DevInfo() {
   const { userData, loading, error } = useGitHub();
@@ -103,7 +106,7 @@ export default function DevInfo() {
                 </g>
               </svg>
               {userData.blog ? (
-                <a href ={userData.blog} target="_blank" rel="noopener noreferrer">
+                <a href ={formatUrl(userData.blog)} target="_blank" rel="noopener noreferrer">
                   <p>{userData.blog}</p>
                 </a>
               ): (

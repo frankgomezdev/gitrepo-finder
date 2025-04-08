@@ -1,5 +1,7 @@
+'use client'
+
 import { useState } from "react";
-import { getUser } from "../api/github";
+import { getUser } from "../../../github";
 import { useGitHub } from "../context/GitHubContext";
 import { toast } from "react-toastify";
 
