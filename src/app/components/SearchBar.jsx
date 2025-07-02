@@ -17,9 +17,14 @@ export default function SearchBar() {
     setLoading(true);
 
     try {
-      const user = await getUser(username);
-      setUserData(user);
-      setError(null);
+      const response = await fetch(`/api/github/${username}`);
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || 'User not found');
+      }
+      
+      setUserData(data);
     } catch (err) {
       setError(err.message);
       toast.error("User not found", {
