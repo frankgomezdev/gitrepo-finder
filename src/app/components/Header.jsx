@@ -2,13 +2,22 @@
 
 import { useState } from "react";
 import { IoIosMoon } from "react-icons/io";
+import { toast } from "react-toastify";
 
 export default function Header() {
     // set up logic for dark mode at some point
     const [darkMode, setDarkMode] = useState(false);
 
     const toggleTheme = () => {
-        console.log("button has been clicked!")
+        toast.error("Not implemented yet!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
     }
 
   return (
